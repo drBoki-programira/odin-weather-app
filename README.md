@@ -1,2 +1,2 @@
-# odin-todo
-To Do app
+# The Weather App
+Forcast weather for the selected city.
