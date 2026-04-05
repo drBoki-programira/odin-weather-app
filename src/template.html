@@ -9,7 +9,15 @@
     <section id="header">The Weather App</section>
     <section id="main">
       <form>
-        <input type="text" placeholder="Enter location" />
+        <div>
+          <input type="text" placeholder="Enter location" />
+          <div class="toggle">
+            <span>℃</span>
+            <input type="checkbox" />
+            <label></label>
+            <span>°F</span>
+          </div>
+        </div>
         <button type="submit">Search</button>
       </form>
       <div id="content"></div>

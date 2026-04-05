@@ -1,6 +1,10 @@
-async function getData(location) {
-  try {
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=WDYABNRBGXHMMTQQH89WYKZ9D`;
+import "./styles.css"
+import { updateDisplay } from "./display";
+
+async function getData(location, isChecked) {
+  // try {
+    const unit = isChecked ? "us" : "metric"
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unit}&key=WDYABNRBGXHMMTQQH89WYKZ9D`;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`There was an error: ${response.status}`);
@@ -8,9 +12,9 @@ async function getData(location) {
 
     const data = await response.json();
     return data;
-  } catch (error) {
-    console.error("An error occurred:", error.message);
-  }
+  // } catch (error) {
+  //   console.error("An error occurred:", error.message);
+  // }
 }
 
 function processData(data) {
@@ -24,21 +28,15 @@ function processData(data) {
   };
 }
 
-function displayData(data) {
-  console.log("Location", data.city);
-  console.log("Current temperatue", data.currentTemp);
-  console.log("MIN ", data.todayMin, " MAX ", data.todayMax);
-  console.log("Current conditions ", data.currentConditions);
-}
-
-const input = document.querySelector("input");
 const form = document.querySelector("form");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const loc = input.value.trim();
-  getData(loc)
+  const loc = form.querySelector("input[type='text']").value.trim();
+  const unit = form.querySelector("input[type='checkbox']").checked
+
+  getData(loc, unit)
     .then(processData)
-    .then(displayData)
+    .then(updateDisplay)
     .catch((e) => console.error(e));
 });

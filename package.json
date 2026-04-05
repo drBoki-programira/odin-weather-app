@@ -1,7 +1,7 @@
 {
-  "name": "odin-todo",
+  "name": "odin-weather-app",
   "version": "1.0.0",
-  "description": "To Do app",
+  "description": "The Weather App",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drBoki-programira/odin-todo.git"
+    "url": "git+https://github.com/drBoki-programira/odin-weather-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/drBoki-programira/odin-todo/issues"
+    "url": "https://github.com/drBoki-programira/odin-weather-app/issues"
   },
-  "homepage": "https://github.com/drBoki-programira/odin-todo#readme",
+  "homepage": "https://github.com/drBoki-programira/odin-weather-app#readme",
   "devDependencies": {
     "@eslint/css": "^1.0.0",
     "@eslint/js": "^10.0.1",
