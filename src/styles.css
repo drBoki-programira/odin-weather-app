@@ -17,14 +17,31 @@ form {
   gap: 5px;
 }
 
+/* info-card */
 .info {
   display: grid;
   gap: 5px;
   padding: 5px;
   margin: 20px auto;
-  width: fit-content;
-  box-shadow: 0 0 10px 10px black;
+  width: 400px;
+  box-shadow: 0 0 2px 2px black;
   border-radius: 10px;
+}
+
+.middle {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.temp-range {
+  margin-left: auto;
 }
 
 /* toggle switch */
