@@ -10,12 +10,15 @@ async function getData(location, isChecked) {
     }
 
     const data = await response.json();
+    data.unit = unit
+
     return data;
 }
 
 function processData(data) {
   console.log(data);
   return {
+    unit: data.unit,
     city: data.resolvedAddress,
     currentIcon: data.currentConditions.icon,
     currentTemp: data.currentConditions.temp,
@@ -52,10 +55,12 @@ function processData(data) {
 const form = document.querySelector("form");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const loc = form.querySelector("input[type='text']").value.trim();
+  const nameInput = form.querySelector("input[type='text']")
+  const location = nameInput.value.trim();
+  nameInput.value = ""
   const unit = form.querySelector("input[type='checkbox']").checked
 
-  getData(loc, unit)
+  getData(location, unit)
     .then(processData)
     .then(updateDisplay)
     .catch((e) => console.error(e));
