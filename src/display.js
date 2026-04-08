@@ -162,7 +162,7 @@ export function displayError(input) {
 
   makeChildOf(main, "div", {
     className: "error",
-    textContent: `Oops, could't find ${input}. Please try again`,
+    textContent: `Oops, could't find "${input}". Please try again.`,
   });
 }
 

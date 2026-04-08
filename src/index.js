@@ -55,10 +55,10 @@ function processData(data) {
 const form = document.querySelector("form");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const nameInput = form.querySelector("input[type='text']");
+  const nameInput = document.getElementById("city-input");
   const location = nameInput.value.trim();
   nameInput.value = "";
-  const unit = form.querySelector("input[type='checkbox']").checked;
+  const unit = document.getElementById("unit-input").checked;
 
   loadingScreen();
 
