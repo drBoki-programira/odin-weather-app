@@ -1,5 +1,5 @@
 import "./styles.css"
-import { updateDisplay } from "./display";
+import { updateDisplay, displayError, loadingScreen } from "./display";
 
 async function getData(location, isChecked) {
     const unit = isChecked ? "us" : "metric"
@@ -60,8 +60,13 @@ form.addEventListener("submit", function (event) {
   nameInput.value = ""
   const unit = form.querySelector("input[type='checkbox']").checked
 
+  loadingScreen()
+
   getData(location, unit)
     .then(processData)
     .then(updateDisplay)
-    .catch((e) => console.error(e));
+    .catch((e) => {
+      console.error(e)
+      displayError(location)
+    });
 });
