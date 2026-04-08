@@ -1,18 +1,18 @@
-import "./styles.css"
+import "./styles.css";
 import { updateDisplay, displayError, loadingScreen } from "./display";
 
 async function getData(location, isChecked) {
-    const unit = isChecked ? "us" : "metric"
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unit}&key=WDYABNRBGXHMMTQQH89WYKZ9D`;
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`There was an error: ${response.status}`);
-    }
+  const unit = isChecked ? "us" : "metric";
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unit}&key=WDYABNRBGXHMMTQQH89WYKZ9D`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`There was an error: ${response.status}`);
+  }
 
-    const data = await response.json();
-    data.unit = unit
+  const data = await response.json();
+  data.unit = unit;
 
-    return data;
+  return data;
 }
 
 function processData(data) {
@@ -55,18 +55,18 @@ function processData(data) {
 const form = document.querySelector("form");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const nameInput = form.querySelector("input[type='text']")
+  const nameInput = form.querySelector("input[type='text']");
   const location = nameInput.value.trim();
-  nameInput.value = ""
-  const unit = form.querySelector("input[type='checkbox']").checked
+  nameInput.value = "";
+  const unit = form.querySelector("input[type='checkbox']").checked;
 
-  loadingScreen()
+  loadingScreen();
 
   getData(location, unit)
     .then(processData)
     .then(updateDisplay)
     .catch((e) => {
-      console.error(e)
-      displayError(location)
+      console.error(e);
+      displayError(location);
     });
 });

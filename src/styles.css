@@ -15,7 +15,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: calc(3rem + 30px) 1fr calc(1rem + 10px);
-  background-color: #FEFDDF;;
+  background-color: #fefddf;
 }
 
 #header {
@@ -23,17 +23,17 @@ body {
   font-size: 3rem;
   font-weight: 600;
   padding: 10px;
-  background-color: #E87F24;
-  color: #FEFDDF;
-  box-shadow: 0 0 2px 2px #FFC81E;
+  background-color: #e87f24;
+  color: #fefddf;
+  box-shadow: 0 0 2px 2px #ffc81e;
 }
 
 #footer {
   text-align: center;
   padding: 5px;
-  background-color: #E87F24;
-  color: #FEFDDF;
-  box-shadow: 0 0 2px 2px #FFC81E;
+  background-color: #e87f24;
+  color: #fefddf;
+  box-shadow: 0 0 2px 2px #ffc81e;
 }
 
 form {
@@ -51,10 +51,10 @@ form {
   margin: 10px;
   width: 225px;
   outline: none;
-  border: 3px solid #E87F24;
+  border: 3px solid #e87f24;
 }
 #city-input:focus {
-  border: 3px inset #FFC81E;
+  border: 3px inset #ffc81e;
   border-bottom: 3px inset #002744;
 }
 
@@ -70,12 +70,12 @@ button:hover {
   cursor: pointer;
 }
 button:active {
-  background-color: #FEFDDF;
+  background-color: #fefddf;
 }
 
 button svg {
   height: 40px;
-  fill: #FEFDDF;
+  fill: #fefddf;
 }
 
 /* info-card */
@@ -85,7 +85,7 @@ button svg {
   padding: 10px;
   margin: 20px auto;
   width: 400px;
-  box-shadow: 0 0 2px 2px #E87F24;
+  box-shadow: 0 0 2px 2px #e87f24;
   border-radius: 10px;
   background-color: #faf9d1;
 }
@@ -204,7 +204,7 @@ button svg {
   align-items: center;
 }
 .toggle label:before {
-  content: '';
+  content: "";
   width: 75px;
   height: 36px;
   background: #70fddf;
@@ -214,7 +214,7 @@ button svg {
   transition: 0.2s ease-in;
 }
 .toggle label:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 32px;
   height: 32px;
@@ -222,11 +222,11 @@ button svg {
   left: 2px;
   top: 2px;
   z-index: 2;
-  background: #FEFDDF;
+  background: #fefddf;
   transition: 0.2s ease-in;
 }
 .toggle input[type="checkbox"]:checked + label:before {
-  background: #4BD865;
+  background: #4bd865;
 }
 .toggle input[type="checkbox"]:checked + label:after {
   left: 41px;
@@ -238,10 +238,10 @@ button svg {
   margin: 30px auto;
   padding: 20px;
   width: 400px;
-  border: 2px solid #FFC81E;
+  border: 2px solid #ffc81e;
   border-radius: 10px;
-  background-color: #E87F24;
-  color: #FEFDDF;
+  background-color: #e87f24;
+  color: #fefddf;
 }
 
 .loading {
@@ -250,5 +250,5 @@ button svg {
   font-weight: 500;
   margin: 30px auto;
   padding: 20px;
-  color: #E87F24;
+  color: #e87f24;
 }
